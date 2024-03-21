@@ -1,5 +1,5 @@
-import React from 'react'
-import CustomApp from './togglefullscreen/1/app'
+import React from 'react';
+import CustomApp from './repository/calculator/1/app';
 
 function App() {
 
