@@ -1,7 +1,8 @@
 import React from 'react'
 // import CustomApp from './7/app';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import Product from './10/product';
+import List from './12/list';
+import Detail from './11/detail';
 
 function App() {
   
@@ -10,8 +11,8 @@ function App() {
     <>
     <Router>
       <Routes>
-        <Route path="/" element={<Product/>}/>
-        {/* <Route path={`/product/:id`} element={<ProductDetail/>}/> */}
+        <Route path="/" element={<List/>}/>
+        <Route path={`/list/:id`} element={<Detail/>}/>
       </Routes>
     </Router>
     </>
