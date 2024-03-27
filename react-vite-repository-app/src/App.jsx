@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomApp from './repository/coupon/1/app';
+import CustomApp from './repository/cursor/1/app';
 
 function App() {
 
