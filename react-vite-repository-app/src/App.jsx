@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomApp from './repository/detectbrowser/1/app';
+import CustomApp from './repository/draggablehtmlelement/1/app';
 
 function App() {
 
