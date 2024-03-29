@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 // main content
 export const MainContent = styled.div`
-height:90vh;
+height:calc(100vh - 76px);
 flex-grow: 1;
 background-color:#f9f9f9;
 `
@@ -32,23 +32,26 @@ export const HeadTitle1= styled.h2`
   }
 `;
 
-export const style=css`
+export const ParaDesc = css`
+color:purple
+`
+
+export const headTitleStyle= css`
 background-color: green
 `
 
 export const HeadTitle2 = styled(HeadTitle1)`
   color: pink; 
-  ${style}
+  ${headTitleStyle}
 `;
 
 
 // banner paragraph
 export const Paragraph = styled.p`
-  color: red; /* Example color */
-  font-size: 18px; /* Example font size */
-  font-weight: bold; /* Example font weight */;
+  font-size: 18px; 
+  font-weight: bold;
   margin:0;
-  /* Add any other CSS styles you want to apply to the p element */
+  ${ParaDesc}
 `;
 
 // header 
