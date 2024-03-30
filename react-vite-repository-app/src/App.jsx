@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomApp from './repository/draggablehtmlelement/1/app';
+import CustomApp from './repository/fatnav/1/app';
 
 function App() {
 
