@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomApp from './repository/howtocenteranimageinadiv/1/app';
+import CustomApp from './repository/imageeffects/1/app';
 
 function App() {
 
