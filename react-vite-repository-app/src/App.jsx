@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomApp from './repository/imageeffects/1/app';
+import CustomApp from './repository/inputfieldinnavbar/1/app';
 
 function App() {
 
@@ -11,3 +11,5 @@ function App() {
 }
 
 export default App
+
+
