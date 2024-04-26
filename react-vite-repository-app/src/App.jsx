@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomApp from './repository/shrinkheader/1/app';
+import CustomApp from './repository/loadmore/1/Custom';
 
 function App() {
 
