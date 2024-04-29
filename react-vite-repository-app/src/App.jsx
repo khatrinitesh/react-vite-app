@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomApp from './repository/notificationbutton/1/App';
+import CustomApp from './repository/productcard/1/CustomApp';
 
 function App() {
 
