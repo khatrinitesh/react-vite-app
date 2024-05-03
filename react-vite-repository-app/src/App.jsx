@@ -1,11 +1,12 @@
 import React from 'react';
-import CustomApp from './repository/stickyheader/1/CustomApp';
+import CustomApp from './repository/typicaldevicebreakpoints/1/CustomApp';
 
 function App() {
 
+
   return (
-    <>
-      <CustomApp/> 
+    <> 
+      <CustomApp /> 
     </>
   )
 }

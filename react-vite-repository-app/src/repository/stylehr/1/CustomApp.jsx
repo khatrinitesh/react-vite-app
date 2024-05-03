@@ -6,7 +6,7 @@ const CustomApp = () => {
     
   return (
     <>
-      <Example  />
+      <Example text="Hello World"  />
     </>
   );
 };
