@@ -1,8 +1,8 @@
 import React from 'react'
 // import CustomApp from './7/app';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import List from './16/list';
-import Detail from './11/detail';
+import List from './17/list';
+import Detail from './17/listdetail';
 
 function App() {
   
