@@ -1,12 +1,12 @@
 import React from 'react';
 import ScrollSection from './ScrollSection'
+import Clients from './Clients';
 
 const Section4 = () => {
   return (
     <>
-    <ScrollSection id="section4">
-        <h1>Section 2</h1>
-        <p>This is the first section.</p>
+    <ScrollSection id="section4" actualCondition={true}>
+        <Clients/>
       </ScrollSection>
     </>
   )

@@ -1,13 +1,13 @@
 import React from 'react'
 import { Element } from 'react-scroll';
 
-const ScrollSection = ({ id, children }) => {
+const ScrollSection = ({ id, children,actualCondition }) => {
     return (
       <Element name={id}>
-      <section id={id} style={{ height: '100vh', backgroundColor: '#f0f0f0' }}>
+      <section id={id} className={`h-auto md:h-full ${actualCondition ? 'bg-lightpurple' : 'bg-white'}`}>
         {children}
       </section>
-      </Element>
+    </Element>
     );
   };
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import ScrollSection from './ScrollSection'
+import Portfolio from './Portfolio';
 
 const Section3 = () => {
   return (
     <>
     <ScrollSection id="section3">
-        <h1>Section 2</h1>
-        <p>This is the first section.</p>
+       <Portfolio/>
       </ScrollSection>
     </>
   )
