@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomApp from './repository/typicaldevicebreakpoints/1/CustomApp';
+import CustomApp from './repository/pagescrollmenusmooth/2/CustomApp';
 
 function App() {
 

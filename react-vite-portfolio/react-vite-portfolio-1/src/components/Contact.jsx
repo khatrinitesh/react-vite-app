@@ -1,11 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Contact = () => {
+
+   // Initialize state for form data and error messages
+   const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      setErrors({
+        name: !formData.name ? "Please enter your name" : "",
+        email: !formData.email ? "Please enter your email" : "",
+        message: !formData.message ? "Please enter your message" : "",
+      });
+      return;
+    }
+    // Form submission logic goes here
+    console.log("Form submitted:", formData);
+    // Clear form data and errors
+    setFormData({ name: "", email: "", message: "" });
+    setErrors({});
+    // Set formSubmitted to true to display success message
+    setFormSubmitted(true);
+    // Automatically hide success message after 3 seconds
+    setTimeout(() => {
+      setFormSubmitted(false);
+    }, 3000);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const isValidName = /^[a-zA-Z]+$/.test(value);
+    if (name === "name" && !isValidName) {
+      setErrors({
+        ...errors,
+        [name]: "Name must contain only alphabetic characters",
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+      setErrors({
+        ...errors,
+        [name]: "",
+        [email]:""
+      });
+    }
+  };
+
   return (
     <div className="container py-16 md:py-20" id="contact">
+      {/* Form title */}
       <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
         Here's a contact form
       </h2>
+      {/* Form description */}
       <h4 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
         Have Any Questions?
       </h4>
@@ -17,69 +73,62 @@ const Contact = () => {
           accumsan.
         </p>
       </div>
-      <form className="mx-auto w-full pt-10 sm:w-3/4">
+      {/* Contact form */}
+      <form className="mx-auto w-full pt-10 sm:w-3/4" onSubmit={handleSubmit}>
+        {/* Name input */}
         <div className="flex flex-col md:flex-row">
           <input
             className="mr-3 w-full rounded border-gray-300 border px-4 py-3 font-body text-black md:w-1/2 lg:mr-5"
             placeholder="Name"
             type="text"
             id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
           />
+          {errors.name && (
+            <span className="text-red-500">{errors.name}</span>
+          )}
+          {/* Email input */}
           <input
             className="mt-6 w-full rounded border-gray-300 border px-4 py-3 font-body text-black md:mt-0 md:ml-3 md:w-1/2 lg:ml-5"
             placeholder="Email"
-            type="text"
+            type="email"
             id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
           />
+          {errors.email && (
+            <span className="text-red-500">{errors.email}</span>
+          )}
         </div>
+        {/* Message textarea */}
         <textarea
           className="mt-6 w-full rounded border-gray-300 border px-4 py-3 font-body text-black md:mt-8"
           placeholder="Message"
           id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
           cols={30}
           rows={10}
-          defaultValue={""}
         />
+        {errors.message && <span className="text-red-500">{errors.message}</span>}
+        {/* Submit button */}
         <button className="mt-6 flex items-center justify-center rounded bg-primary px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-grey-20">
           Send
           <i className="bx bx-chevron-right relative -right-2 text-3xl" />
         </button>
       </form>
-      <div className="flex flex-col pt-16 lg:flex-row">
-        <div className="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-gray-300 border px-6 py-6 sm:py-8 lg:w-1/3">
-          <div className="flex items-center">
-            <i className="bx bx-phone text-2xl text-grey-40" />
-            <p className="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-              My Phone
-            </p>
+      {/* Success message */}
+      {formSubmitted && (
+        <div className="absolute inset-x-0 bottom-0 mb-10 text-center">
+          <div className="bg-green-500 text-white py-2 px-4 rounded-lg inline-block">
+            Form submitted successfully!
           </div>
-          <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-            (+881) 111 222 333
-          </p>
         </div>
-        <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-gray-300-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
-          <div className="flex items-center">
-            <i className="bx bx-envelope text-2xl text-grey-40" />
-            <p className="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-              My Email
-            </p>
-          </div>
-          <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-            name@mydomain.com
-          </p>
-        </div>
-        <div className="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-gray-300-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2">
-          <div className="flex items-center">
-            <i className="bx bx-map text-2xl text-grey-40" />
-            <p className="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
-              My Address
-            </p>
-          </div>
-          <p className="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-            123 New York D Block 1100, 2011 USA
-          </p>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

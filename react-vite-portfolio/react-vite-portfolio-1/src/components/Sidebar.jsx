@@ -8,6 +8,10 @@ const Sidebar = () => {
     setBtnToggle(!btnToggle);
   };
 
+  const handleNavClick = () => {
+    setBtnToggle(false)
+  }
+
   return (
     <>
       <button
@@ -20,14 +24,12 @@ const Sidebar = () => {
         <span className="line transition-all duration-300  w-full h-[2px] rounded-[3px] bg-white block relative top-[0px]"></span>
         <span className="line transition-all duration-300  w-full h-[2px] rounded-[3px] bg-white block top-[7px] relative"></span>
       </button>
-      {btnToggle ? (
-        <>
-          <div
-            className={`sidebar flex items-center justify-center transition-all duration-500 h-full fixed top-0  right-0 w-full bg-primary ${
-              btnToggle ? "w-[300px]" : "w-0"
+      <div
+            className={`sidebar flex items-center justify-center transition-all duration-500 h-full fixed top-[-200%]  right-0 w-full bg-primary ${
+              btnToggle ? "!top-0" : "w-0"
             }`}
           >
-            <ul className="block flex-col flex justify-center items-center ">
+            <ul className="flex-col flex justify-center items-center ">
               {sections.map((section) => (
                 <li key={section.id} className="group pl-6">
                   <Link
@@ -38,6 +40,7 @@ const Sidebar = () => {
                     smooth={true}
                     offset={-70}
                     duration={500}
+                    onClick={handleNavClick}
                   >
                     <span className="pt-0.5">{section.text}</span>
                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
@@ -46,8 +49,6 @@ const Sidebar = () => {
               ))}
             </ul>
           </div>
-        </>
-      ) : null}
     </>
   );
 };
