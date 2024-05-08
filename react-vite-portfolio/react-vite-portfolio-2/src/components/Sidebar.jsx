@@ -28,7 +28,7 @@ const Sidebar = () => {
         <span className="line transition-all duration-300  w-full h-[2px] rounded-[3px] dark:bg-white bg-primaryD block top-[7px] relative"></span>
       </button>
         <div
-          className={`sidebar bg-secondaryL z-[9999] flex items-center justify-center transition-all duration-500  h-screen fixed top-[-100%]  right-0 w-full  ${btnToggle ? "dark:bg-primaryD !top-0 ": ""
+          className={`sidebar bg-secondaryL z-[9999] flex items-center justify-center transition-all duration-500  h-screen fixed top-[-200%]  right-0 w-full  ${btnToggle ? "dark:bg-primaryD !top-0 ": ""
           }`}
         >
           <ul className="w-full flex-col flex justify-center items-center ">
